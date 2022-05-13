@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            background-color: rgb(156, 215, 224);
+            width: 500px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+        }
+        .timer{
+            background-color: rgb(156, 215, 224);
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body> 
+    <div class="container">
+        <input type="text" id="sec" >
+        <span>&nbsp; &nbsp; seconds&nbsp;&nbsp;  </span>
+        <button id="btn">set timer</button>
+
+    </div>
+    <div id="time" class="timer"></div>
+    <script>
+        var myCounter;
+        let button = document.getElementById('btn');
+        button.addEventListener('click', timer);
+        function timer() {
+            clearInterval(myCounter); 
+            let second = parseInt(document.getElementById('sec').value);
+            var i = second;
+        myCounter = setInterval(function() {
+        if (i == 0) {
+            console.log('completed');
+            clearInterval(myCounter);
+        } else {
+            console.log(i--);
+            console.log('still going');
+            let time = document.getElementById('time');
+            time.innerHTML = i;
+        }
+    }, 1000);
+};
+
+    </script>
+</body>
+</html>

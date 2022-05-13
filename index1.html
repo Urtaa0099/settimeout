@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img1{
+            width: 700px;
+            height: 700px;
+        }
+    </style>
+</head>
+<body onload="changePicture()">
+    <img src="/picture/1.jpg" id="img1"></img> 
+    <script>
+        let i=0
+        var zurag =  ["/picture/1.jpg","/picture/2.png","/picture/3.jpg","/picture/4.jpg","/picture/5.jpg","/picture/6.jpg","/picture/7.jpg","/picture/8.jpg","/picture/9.jpg","/picture/10.jpg"]
+        function changePicture(){
+            setInterval("changeImg()",2000);
+        }
+        function changeImg(){
+            document.getElementById("img1").src=zurag[i];
+            i++;
+            if(i==9){
+                i=0;
+            }
+        }
+    </script>
+</body>
+</html>
